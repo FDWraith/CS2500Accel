@@ -1,1 +1,2 @@
-# CS2500Accel
+# CS 2500 AccelERATED
+
