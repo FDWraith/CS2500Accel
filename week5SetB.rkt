@@ -551,6 +551,7 @@
                            (make-posn 5 5)
                            (make-posn 7 7)))
 (check-expect (turkey-eating NOFOOD t-ai6) t-ai6)
+(check-expect (turkey-eating (list NOFOOD) t-ai6) t-ai6)
 (define (turkey-eating lof t)
   (cond
     [(empty? lof) t]
@@ -631,8 +632,11 @@
 ;; determines if the food is eaten by the given turkey
 (check-expect (food-eaten-by-turkey? food6 t-player6) #t)
 (check-expect (food-eaten-by-turkey? food8 t-player2) #f)
+(check-expect (food-eaten-by-turkey? NOFOOD t-player2) #f)
 (define (food-eaten-by-turkey? f t)
-  (turkey-close-enough? f t))
+  (cond
+    [(empty? f) #f]
+    [else (turkey-close-enough? f t)]))
 
 ;; Turkey -> Turkey
 ;; increments the radius of the given turkey by one.
