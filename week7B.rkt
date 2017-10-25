@@ -2,8 +2,8 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname week7A) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ; Kevin Zhang and Celine Yan
+; Week 7 Exercise B
 
-; Week 7 Exercise A
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -219,8 +219,6 @@
 (check-expect (max-size (list (make-turkey TKY-RADIUS AI-COLOR (make-posn 4 5) (make-posn 10 20))
                               (make-turkey 35 AI-COLOR (make-posn 4 5) (make-posn 10 20))))
               35)
-
-    
 #|
 (define (max-size.v0 lt)
   (cond
@@ -335,7 +333,6 @@
 
 (define (parse-thru-list lot img)
     (foldl render-turkey img lot)) 
-
 
 ;;                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;;                          ~~~~~~~~~~ HELPER FUNCTION ~~~~~~~~~~~~~ 
@@ -460,7 +457,6 @@
 (check-within (update-listturkey food1 sample-lt-a) (list (update-turkey food1 t-ai)
                                                           (update-turkey food1 t-ai2)) 1)
 
-
 #|
 (define (update-listturkey.v0 f lt)
   (cond
@@ -484,7 +480,6 @@
           (define (local-update-turkey t)
             (update-turkey f t)))
     (map local-update-turkey lot))) 
-
 
 ;;                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;;                         ~~~~~~~~~~ HELPER FUNCTION ~~~~~~~~~~~~~
